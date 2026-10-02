@@ -11,18 +11,6 @@ public class Interview {
 	private String result;
 	private String feedback;
 
-	public Interview(int interviewId, int applicationId, String round, Timestamp interviewDate, String mode,
-			String result, String feedback) {
-
-		this.interviewId = interviewId;
-		this.applicationId = applicationId;
-		this.round = round;
-		this.interviewDate = interviewDate;
-		this.mode = mode;
-		this.result = result;
-		this.feedback = feedback;
-	}
-
 	public int getInterviewId() {
 		return interviewId;
 	}

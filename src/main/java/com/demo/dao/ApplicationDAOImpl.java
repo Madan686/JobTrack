@@ -1,12 +1,21 @@
 package com.demo.dao;
 
+import java.sql.Connection;
+
 import com.demo.dto.Application;
+import com.demo.util.Connectivity;
 
 public class ApplicationDAOImpl implements ApplicationDAO {
 
+	private Connection con;
+
+	public ApplicationDAOImpl() {
+		this.con = Connectivity.getConnection();
+	}
+
 	@Override
 	public void applyForJob(Application application) {
-		// TODO Auto-generated method stub
+		String query = "Insert into applications values(0,?)";
 
 	}
 

@@ -4,23 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>User Login</title>
+<title>Forgot Password</title>
 </head>
 <body>
-	<form action="login" method="POST">
-		<fieldset>
-			<legend>User Login</legend>
 
-			<%
-			String successMessage = (String) request.getAttribute("success-message");
-			%>
-			<%
-			if (successMessage != null) {
-			%>
-			<p style="color: green;"><%=successMessage%></p>
-			<%
-			}
-			%>
+	<form action="forgotPassword" method="post">
+		<fieldset>
+
 			<%
 			String errorMessage = (String) request.getAttribute("error-message");
 			%>
@@ -33,25 +23,21 @@
 			%>
 			<table>
 				<tr>
-					<td>Enter Email:</td>
+					<td>Enter email:</td>
 					<td><input type="email" name="email"></td>
 				</tr>
 				<tr>
-					<td>Enter Password:</td>
+					<td>Enter the new password:</td>
 					<td><input type="password" name="password"></td>
 				</tr>
-
 				<tr>
-					<td><button type="submit">Login</button></td>
+					<td>Confirm the new password:</td>
+					<td><input type="password" name="confirm"></td>
 				</tr>
 				<tr>
-					<td><a href="register.jsp">New User? Register...</a></td>
-				</tr>
-				<tr>
-					<td><a href="forgotPassword.jsp">Forgot Password?</a></td>
+					<td><button type="submit">Reset</button></td>
 				</tr>
 			</table>
-
 		</fieldset>
 	</form>
 

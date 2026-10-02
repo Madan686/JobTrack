@@ -12,18 +12,6 @@ public class Job {
 	private String description;
 	private Date deadline;
 
-	public Job(Integer job_id, String company_name, String job_title, String location, String job_type, Double salary,
-			String description, Date deadline) {
-		this.job_id = job_id;
-		this.company_name = company_name;
-		this.job_title = job_title;
-		this.location = location;
-		this.job_type = job_type;
-		this.salary = salary;
-		this.description = description;
-		this.deadline = deadline;
-	}
-
 	public Integer getJob_id() {
 		return job_id;
 	}

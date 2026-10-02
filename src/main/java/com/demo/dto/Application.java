@@ -58,13 +58,4 @@ public class Application {
 		this.notes = notes;
 	}
 
-	public Application(int applicationId, int userId, int jobId, Date appliedDate, String status, String notes) {
-		this.applicationId = applicationId;
-		this.userId = userId;
-		this.jobId = jobId;
-		this.appliedDate = appliedDate;
-		this.status = status;
-		this.notes = notes;
-	}
-
 }

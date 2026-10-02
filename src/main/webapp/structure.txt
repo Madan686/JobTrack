@@ -135,3 +135,20 @@ getUpcomingInterviews()
 updateInterview()
 updateInterviewResult()
 deleteInterview()
+
+
+Dashboard
+│
+├── Total Applications
+│
+├── Status Summary
+│   ├── APPLIED
+│   ├── ASSESSMENT
+│   ├── TECHNICAL
+│   ├── HR
+│   ├── SELECTED
+│   └── REJECTED
+│
+├── Upcoming Interviews
+│
+└── Recent Applications
