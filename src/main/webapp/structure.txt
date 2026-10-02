@@ -1,0 +1,137 @@
+JobTrack
+│
+├── JSP Pages
+│   ├── login.jsp
+│   ├── register.jsp
+│   ├── dashboard.jsp
+│   ├── addJob.jsp
+│   ├── jobs.jsp
+│   ├── application.jsp
+│   ├── interview.jsp
+│   └── updateAccount.jsp
+│
+├── Servlets
+│   ├── RegisterServlet
+│   ├── LoginServlet
+│   ├── LogoutServlet
+│   ├── AddJobServlet
+│   ├── ApplyJobServlet
+│   ├── UpdateApplicationServlet
+│   ├── AddInterviewServlet
+│   └── UpdateAccountServlet
+│
+├── DTO / Model
+│   ├── User
+│   ├── Job
+│   ├── Application
+│   └── Interview
+│
+├── DAO
+│   ├── UserDAO
+│   ├── JobDAO
+│   ├── ApplicationDAO
+│   └── InterviewDAO
+│
+└── Database
+    ├── users
+    ├── jobs
+    ├── applications
+    └── 
+
+    
+    
+    
+    
+User DTO 
+
+Column				Type							Description
+
+user_id		INT PK AUTO_INCREMENT					Unique user
+name			VARCHAR(100)						User's name
+email		VARCHAR(100) UNIQUE						Login email
+password		VARCHAR(255)						Password
+phone			VARCHAR(15)							Phone number
+    
+  
+Job DTO
+
+Column					Type						Description
+
+job_id				INT PK AUTO_INCREMENT			Job ID
+company_name			VARCHAR(100)				Company
+job_title				VARCHAR(100)				Position
+location				VARCHAR(100)				Job location
+job_type				VARCHAR(50)				Full-time/Internship
+salary					DECIMAL(10,2)				Salary
+description					TEXT				Job description
+deadline					DATE				Application deadline
+
+
+
+Application DTO
+
+Column           	 	Type                 		Description      
+
+application_id   	INT PK AUTO_INCREMENT  		Application ID   
+user_id          		INT FK                 		Who applied      
+job_id         	 		INT FK                 		Which job        
+applied_date     		DATE                   		Application date
+status           	VARCHAR(30)            		Current status   
+notes            	VARCHAR(500)          	 		User notes    
+
+
+Interview DTO
+
+Column					Type						Description
+
+interview_id		INT PK AUTO_INCREMENT			Interview ID
+application_id			INT FK						Related application
+round					VARCHAR(50)					Technical/HR/etc.
+interview_date			DATETIME					Interview schedule
+mode					VARCHAR(30)					Online/Offline
+result					VARCHAR(30)					Pending/Passed/Failed
+feedback				VARCHAR(500)				Interview feedback   
+
+
+
+
+DAO
+
+UserDAO
+
+registerUser()
+getUserByEmail()
+validateLogin()
+updateUser()
+updatePassword()
+
+JobDAO
+
+addJob()
+getJobById()
+getAllJobs()
+updateJob()
+deleteJob()
+searchJobs()
+
+
+ApplicationDAO
+
+applyForJob()
+getApplicationById()
+getApplicationsByUser()
+getApplicationsByJob()
+updateApplicationStatus()
+updateApplicationNotes()
+deleteApplication()
+
+
+InterviewDAO
+
+scheduleInterview()
+getInterviewById()
+getInterviewsByApplication()
+getUpcomingInterviews()
+updateInterview()
+updateInterviewResult()
+deleteInterview()
