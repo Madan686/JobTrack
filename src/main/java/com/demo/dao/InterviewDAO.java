@@ -10,7 +10,7 @@ public interface InterviewDAO {
 
 	public Interview getInterviewById(Integer id);
 
-	public Interview getInterviewsByApplication(Integer application_id);
+	public List<Interview> getInterviewsByApplication(Integer application_id);
 
 	public List<Interview> getUpcomingInterviews();
 

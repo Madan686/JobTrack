@@ -16,6 +16,6 @@ public interface JobDAO {
 
 	public void deleteJob(Integer id);
 
-	public Job searchJobs(String search);
+	public List<Job> searchJobs(String search);
 
 }

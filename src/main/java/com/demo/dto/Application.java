@@ -1,6 +1,6 @@
 package com.demo.dto;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Application {
 	private int applicationId;

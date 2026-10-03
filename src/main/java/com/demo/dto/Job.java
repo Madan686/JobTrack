@@ -1,6 +1,6 @@
 package com.demo.dto;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Job {
 	private Integer job_id;
