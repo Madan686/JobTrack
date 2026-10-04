@@ -4,11 +4,12 @@ import java.sql.Date;
 
 public class Job {
 	private Integer job_id;
+	private Integer user_id;
 	private String company_name;
 	private String job_title;
 	private String location;
 	private String job_type;
-	private Double salary;
+	private String salary;
 	private String description;
 	private Date deadline;
 
@@ -18,6 +19,14 @@ public class Job {
 
 	public void setJob_id(Integer job_id) {
 		this.job_id = job_id;
+	}
+
+	public Integer getUser_id() {
+		return user_id;
+	}
+
+	public void setUser_id(Integer user_id) {
+		this.user_id = user_id;
 	}
 
 	public String getCompany_name() {
@@ -52,11 +61,11 @@ public class Job {
 		this.job_type = job_type;
 	}
 
-	public Double getSalary() {
+	public String getSalary() {
 		return salary;
 	}
 
-	public void setSalary(Double salary) {
+	public void setSalary(String salary) {
 		this.salary = salary;
 	}
 

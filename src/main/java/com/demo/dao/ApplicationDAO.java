@@ -8,14 +8,14 @@ public interface ApplicationDAO {
 
 	public void applyForJob(Application application);
 
-	public Application getApplicationById(Integer id);
+	public Application getApplicationById(Integer id, Integer user_id);
 
 	public List<Application> getApplicationsByUser(Integer user_id);
 
-	public List<Application> getApplicationsByJob(Integer job_id);
+	public List<Application> getApplicationsByJob(Integer job_id, Integer user_id);
 
 	public void updateApplicationStatus(Application application);
 
-	public void deleteApplication(Integer id);
+	public void deleteApplication(Integer id, Integer user_id);
 
 }

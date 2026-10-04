@@ -6,15 +6,15 @@ import com.demo.dto.Interview;
 
 public interface InterviewDAO {
 
-	public void scheduleInterview(Interview interview);
+	void scheduleInterview(Interview interview);
 
-	public Interview getInterviewById(Integer id);
+	Interview getInterviewById(Integer interview_id, Integer user_id);
 
-	public List<Interview> getInterviewsByApplication(Integer application_id);
+	List<Interview> getInterviewsByApplication(Integer application_id, Integer user_id);
 
-	public List<Interview> getUpcomingInterviews();
+	List<Interview> getUpcomingInterviews(Integer user_id);
 
-	public void updateInterview(Interview interview);
+	void updateInterview(Interview interview);
 
-	public void deleteInterview(Integer id);
+	void deleteInterview(Integer interview_id, Integer user_id);
 }

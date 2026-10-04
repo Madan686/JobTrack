@@ -10,7 +10,16 @@
 	<form action="register" method="POST">
 		<fieldset>
 			<legend>User Registration</legend>
-
+			<%
+			String errorMessage = (String) request.getAttribute("error-message");
+			%>
+			<%
+			if (errorMessage != null) {
+			%>
+			<p style="color: red;"><%=errorMessage%></p>
+			<%
+			}
+			%>
 			<table>
 				<tr>
 					<td>Enter the Name:</td>
@@ -36,7 +45,7 @@
 					<td><button>Register</button></td>
 				</tr>
 				<tr>
-				<td><a href="login.jsp">Have account? Login...</a>
+					<td><a href="login.jsp">Have account? Login...</a>
 				</tr>
 			</table>
 		</fieldset>

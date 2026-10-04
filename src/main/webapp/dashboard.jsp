@@ -8,7 +8,6 @@
 <title>User Dashboard</title>
 </head>
 <body>
-	<h2>Welcome to user</h2>
 
 	<%
 	User user = (User) session.getAttribute("user");
@@ -24,9 +23,10 @@
 		<nav>
 			<ul>
 
-				<li><a href="application.jsp">View Applications</a></li>
+				<li><a href="viewApplications.jsp">View Applications</a></li>
 				<li><a href="updateAccount.jsp">Update Account</a></li>
 				<li><a href="forgotPassword.jsp">Reset Password</a></li>
+				<li><a href="addJob.jsp">Add Jobs</a></li>
 				<li><button>
 						<a href="logout">Logout</a>
 					</button></li>

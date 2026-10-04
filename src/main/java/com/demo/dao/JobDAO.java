@@ -6,16 +6,15 @@ import com.demo.dto.Job;
 
 public interface JobDAO {
 
-	public void addJob(Job job);
+	void addJob(Job job);
 
-	public Job getJobById(Integer id);
+	Job getJobById(Integer id);
 
-	public List<Job> getAllJobs();
+	List<Job> getJobsByUser(Integer user_id);
 
-	public void updateJob(Job job);
+	void updateJob(Job job);
 
-	public void deleteJob(Integer id);
+	void deleteJob(Integer job_id, Integer user_id);
 
-	public List<Job> searchJobs(String search);
-
+	List<Job> searchJobs(Integer user_id, String search);
 }

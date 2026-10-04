@@ -38,12 +38,14 @@ public class ApplicationDAOImpl implements ApplicationDAO {
 	}
 
 	@Override
-	public Application getApplicationById(Integer id) {
-		String query = "Select * from applications where application_id=?";
+	public Application getApplicationById(Integer app_id, Integer user_id) {
+		String query = "select * from applications where application_id=? and user_id=?";
 		Application application = null;
+
 		try {
 			PreparedStatement ps = con.prepareStatement(query);
-			ps.setInt(1, id);
+			ps.setInt(1, app_id);
+			ps.setInt(2, user_id);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
 				application = new Application();
@@ -57,6 +59,7 @@ public class ApplicationDAOImpl implements ApplicationDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+
 		return application;
 	}
 
@@ -87,13 +90,14 @@ public class ApplicationDAOImpl implements ApplicationDAO {
 	}
 
 	@Override
-	public List<Application> getApplicationsByJob(Integer job_id) {
-		String query = "Select * from applications where job_id=?";
+	public List<Application> getApplicationsByJob(Integer job_id, Integer user_id) {
+		String query = "Select * from applications where job_id=? and user_id=?";
 		List<Application> list = new ArrayList<>();
 		Application application = null;
 		try {
 			PreparedStatement ps = con.prepareStatement(query);
 			ps.setInt(1, job_id);
+			ps.setInt(2, user_id);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
 				application = new Application();
@@ -114,15 +118,12 @@ public class ApplicationDAOImpl implements ApplicationDAO {
 
 	@Override
 	public void updateApplicationStatus(Application application) {
-		String query = "update applications set user_id=?, job_id=?, applied_date=?, status=?, notes=? where application_id=?";
+		String query = "String query = \"update applications set status=? where application_id=? and user_id=?;";
 		try {
 			PreparedStatement ps = con.prepareStatement(query);
-			ps.setInt(1, application.getJobId());
-			ps.setInt(2, application.getUserId());
-			ps.setDate(3, application.getAppliedDate());
-			ps.setString(4, application.getStatus());
-			ps.setString(5, application.getNotes());
-			ps.setInt(6, application.getApplicationId());
+			ps.setString(1, application.getStatus());
+			ps.setInt(2, application.getApplicationId());
+			ps.setInt(3, application.getUserId());
 			ps.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -131,11 +132,12 @@ public class ApplicationDAOImpl implements ApplicationDAO {
 	}
 
 	@Override
-	public void deleteApplication(Integer id) {
-		String query = "Delete from applications where application_id=?;";
+	public void deleteApplication(Integer id, Integer user_id) {
+		String query = "Delete from applications where application_id=? and user_id=?;";
 		try {
 			PreparedStatement ps = con.prepareStatement(query);
 			ps.setInt(1, id);
+			ps.setInt(2, user_id);
 			ps.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
