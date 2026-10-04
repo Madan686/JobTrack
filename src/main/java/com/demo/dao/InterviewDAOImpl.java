@@ -149,9 +149,9 @@ public class InterviewDAOImpl implements InterviewDAO {
 	}
 
 	@Override
-	public void updateInterview(Interview interview) {
+	public void updateInterview(Interview interview, Integer user_id) {
 
-		String query = "UPDATE interviews SET application_id=?, round=?, interview_date=?, mode=?, result=?, feedback=?  WHERE interview_id=?";
+		String query = "UPDATE interviews i JOIN applications a ON i.application_id = a.application_id SET i.application_id=?, i.round=?, i.interview_date=?, i.mode=?, i.result=?, i.feedback=? WHERE i.interview_id=? AND a.user_id=?";
 
 		try {
 			PreparedStatement ps = con.prepareStatement(query);
@@ -163,6 +163,7 @@ public class InterviewDAOImpl implements InterviewDAO {
 			ps.setString(5, interview.getResult());
 			ps.setString(6, interview.getFeedback());
 			ps.setInt(7, interview.getInterviewId());
+			ps.setInt(8, user_id);
 
 			ps.executeUpdate();
 

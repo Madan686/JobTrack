@@ -10,7 +10,7 @@
 <body>
 
 	<%
-	User user = (User) request.getAttribute("user");
+	User user = (User) session.getAttribute("user");
 	%>
 	<%
 	if (user != null) {
@@ -35,7 +35,7 @@
 				</tr>
 				<tr>
 					<td>Enter email:</td>
-					<td><input type="text" name="name"
+					<td><input type="text" name="email"
 						value="<%=user.getEmail()%>"></td>
 				</tr>
 				<tr>

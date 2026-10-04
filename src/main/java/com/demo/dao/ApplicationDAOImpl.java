@@ -118,17 +118,21 @@ public class ApplicationDAOImpl implements ApplicationDAO {
 
 	@Override
 	public void updateApplicationStatus(Application application) {
-		String query = "String query = \"update applications set status=? where application_id=? and user_id=?;";
+
+		String query = "update applications set status=? where application_id=? and user_id=?";
+
 		try {
 			PreparedStatement ps = con.prepareStatement(query);
+
 			ps.setString(1, application.getStatus());
 			ps.setInt(2, application.getApplicationId());
 			ps.setInt(3, application.getUserId());
+
 			ps.executeUpdate();
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	@Override

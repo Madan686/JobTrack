@@ -21,9 +21,10 @@ public class Login extends HttpServlet {
 		UserDAO userDAO = new UserDAOImpl();
 		User user = userDAO.getUserByEmail(req.getParameter("email"));
 		if (user != null) {
-			HttpSession session = req.getSession();
-			session.setAttribute("user", user);
+
 			if (req.getParameter("password").equals(user.getPassword())) {
+				HttpSession session = req.getSession();
+				session.setAttribute("user", user);
 				req.setAttribute("success-message", "Login successful...");
 				req.getRequestDispatcher("dashboard.jsp").forward(req, resp);
 			} else {

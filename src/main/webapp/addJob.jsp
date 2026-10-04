@@ -1,49 +1,73 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Add Jobs</title>
+<title>Add Job</title>
 </head>
-<body>
-	<form action="addJobs" method="post">
-		<fieldset>
-			<table>
-				<tr>
-					<td>Enter the Company name:</td>
-					<td><input type="text" name="company_name"></td>
-				</tr>
-				<tr>
-					<td>Enter the job title:</td>
-					<td><input type="text" name="job_title"></td>
-				</tr>
-				<tr>
-					<td>Enter the location:</td>
-					<td><input type="text" name="location"></td>
-				</tr>
-				<tr>
-					<td>Enter the job type:</td>
-					<td><input type="text" name="job_type"></td>
-				</tr>
-				<tr>
-					<td>Enter the salary:</td>
-					<td><input type="number" name="salary" step="0.01"></td>
-				</tr>
-				<tr>
-					<td>Enter the description:</td>
-					<td><textarea name="description"></textarea></td>
-				</tr>
-				<tr>
-					<td>Enter the deadline</td>
-					<td><input type="date" name="deadline"></td>
-				</tr>
-				<tr>
-					<td><button>Add job</button></td>
-				</tr>
-			</table>
 
-		</fieldset>
+<body>
+
+	<h2>Add Job</h2>
+
+	<a href="dashboard.jsp">Dashboard</a>
+	<a href="jobs.jsp">View Jobs</a>
+	<a href="viewApplications.jsp">View Applications</a>
+	<a href="updateAccount.jsp">Update Account</a>
+	<a href="logout">Logout</a>
+
+	<hr>
+
+	<form action="addJobs" method="post">
+
+		<table>
+
+			<tr>
+				<td>Company Name</td>
+				<td><input type="text" name="company_name" required></td>
+			</tr>
+
+			<tr>
+				<td>Job Title</td>
+				<td><input type="text" name="job_title" required></td>
+			</tr>
+
+			<tr>
+				<td>Location</td>
+				<td><input type="text" name="location"></td>
+			</tr>
+
+			<tr>
+				<td>Job Type</td>
+				<td><input type="text" name="job_type"></td>
+			</tr>
+
+			<tr>
+				<td>Salary</td>
+				<td><input type="text" name="salary"></td>
+			</tr>
+
+			<tr>
+				<td>Description</td>
+				<td><textarea name="description" rows="5" cols="30"></textarea>
+				</td>
+			</tr>
+
+			<tr>
+				<td>Deadline</td>
+				<td><input type="date" name="deadline"></td>
+			</tr>
+
+			<tr>
+				<td></td>
+				<td><input type="submit" value="Add Job"></td>
+			</tr>
+
+		</table>
+
 	</form>
+
 </body>
 </html>

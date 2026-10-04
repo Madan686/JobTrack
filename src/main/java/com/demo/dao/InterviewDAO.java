@@ -14,7 +14,7 @@ public interface InterviewDAO {
 
 	List<Interview> getUpcomingInterviews(Integer user_id);
 
-	void updateInterview(Interview interview);
+	void updateInterview(Interview interview, Integer user_id);
 
 	void deleteInterview(Integer interview_id, Integer user_id);
 }
